@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BEG Gloubal — Ремонт и строительство в Алматы</title>
+<meta name="description" content="Ремонт офисов, квартир, домов и магазинов в Алматы. Быстро, качественно, под ключ. BEG Gloubal — 15 лет опыта."/>
+<meta name="keywords" content="ремонт офисов Алматы, ремонт квартир Алматы, строительство под ключ, BEG Gloubal, ремонт магазинов Алматы"/>
+<meta property="og:title" content="BEG Gloubal — Ремонт и строительство в Алматы"/>
+<meta property="og:description" content="Офисы, квартиры, дома, магазины — делаем качественно, в срок. 15 лет опыта, 200+ объектов."/>
+<meta property="og:type" content="website"/>
+<meta name="robots" content="index, follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230c0c0e'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='%23b8924a' font-family='serif'>B</text></svg>"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap&subset=latin,cyrillic" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c0c0e;
+  --ink2:#1a1a1f;
+  --cream:#f5f2ec;
+  --cream2:#edeae3;
+  --gold:#b8924a;
+  --gold2:#d4a85a;
+  --white:#ffffff;
+  --gray:#8a8a90;
+  --light:#f9f8f5;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+.cursor{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transition:transform 0.15s;mix-blend-mode:multiply}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transition:all 0.1s;opacity:0.5}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5vw;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,242,236,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(184,146,74,0.12);transition:all 0.3s}
+nav.scrolled{background:rgba(245,242,236,0.98);box-shadow:0 2px 40px rgba(0,0,0,0.06)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-box{width:38px;height:38px;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:1rem;letter-spacing:-0.5px}
+.logo-text strong{display:block;font-size:0.8rem;font-weight:600;color:var(--ink);letter-spacing:0.3px;line-height:1}
+.logo-text span{font-size:0.62rem;color:var(--gray);letter-spacing:1.5px;text-transform:uppercase}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--ink);text-decoration:none;font-size:0.82rem;font-weight:500;opacity:0.65;transition:opacity 0.2s;letter-spacing:0.2px}
+.nav-links a:hover{opacity:1}
+.nav-cta{background:var(--ink);color:var(--cream);padding:9px 22px;font-size:0.8rem;font-weight:500;text-decoration:none;letter-spacing:0.5px;transition:all 0.2s;border:1.5px solid var(--ink)}
+.nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.burger span{display:block;width:24px;height:1.5px;background:var(--ink);transition:all 0.3s}
+.hero{min-height:100vh;background:var(--ink);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;padding-top:68px}
+.hero-left{padding:80px 5vw 80px 5vw;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero-right{position:relative;overflow:hidden;background:linear-gradient(135deg,#1a1a1f 0%,#0c0c0e 100%)}
+.hero-right::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(184,146,74,0.04) 0,rgba(184,146,74,0.04) 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,rgba(184,146,74,0.04) 0,rgba(184,146,74,0.04) 1px,transparent 1px,transparent 60px)}
+.hero-number{position:absolute;bottom:60px;right:5vw;font-family:'Cormorant Garamond',serif;font-size:18rem;font-weight:700;color:rgba(184,146,74,0.06);line-height:1;user-select:none}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(184,146,74,0.1);border:1px solid rgba(184,146,74,0.2);padding:7px 16px;margin-bottom:36px;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);font-weight:500}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,4.5vw,4.2rem);font-weight:600;color:var(--white);line-height:1.1;margin-bottom:28px;letter-spacing:-0.5px}
+.hero h1 em{color:var(--gold2);font-style:normal;position:relative}
+.hero p{color:rgba(255,255,255,0.45);font-size:0.95rem;line-height:1.85;margin-bottom:48px;max-width:480px;font-weight:300}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:72px}
+.btn-primary{background:var(--gold);color:var(--ink);padding:15px 32px;font-weight:600;font-size:0.85rem;text-decoration:none;letter-spacing:0.5px;transition:all 0.25s;display:inline-flex;align-items:center;gap:10px}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 32px rgba(184,146,74,0.25)}
+.btn-secondary{background:transparent;color:rgba(255,255,255,0.7);padding:15px 32px;font-weight:400;font-size:0.85rem;text-decoration:none;border:1px solid rgba(255,255,255,0.15);transition:all 0.25s}
+.btn-secondary:hover{border-color:rgba(255,255,255,0.4);color:white}
+.hero-stats{display:flex;gap:48px}
+.stat{border-left:2px solid rgba(184,146,74,0.3);padding-left:20px}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--gold2);line-height:1}
+.stat-l{font-size:0.72rem;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase;margin-top:5px}
+.hero-img-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.hero-visual{width:75%;max-width:420px;aspect-ratio:3/4;background:linear-gradient(160deg,rgba(184,146,74,0.08) 0%,rgba(184,146,74,0.02) 100%);border:1px solid rgba(184,146,74,0.12);position:relative;display:flex;align-items:center;justify-content:center}
+.hero-visual::before{content:'BEG';font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:700;color:rgba(184,146,74,0.08);position:absolute}
+.hero-visual-tag{position:absolute;bottom:-1px;left:-1px;right:-1px;background:rgba(184,146,74,0.08);border-top:1px solid rgba(184,146,74,0.15);padding:16px 20px}
+.hero-visual-tag p{font-size:0.75rem;color:rgba(255,255,255,0.4);letter-spacing:0.5px}
+.hero-visual-tag strong{display:block;font-size:0.85rem;color:var(--gold2);margin-top:4px;font-weight:500}
+.ticker{background:var(--gold);padding:13px 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-flex;gap:0;animation:ticker 25s linear infinite}
+.ticker-inner span{font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink);padding:0 32px}
+.ticker-inner span::after{content:'·';margin-left:32px;opacity:0.4}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.services{padding:120px 5vw;background:var(--cream)}
+.section-label{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.section-label::before{content:'';width:28px;height:1.5px;background:var(--gold)}
+.section-label span{font-size:0.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:600;color:var(--ink);line-height:1.15;margin-bottom:16px;letter-spacing:-0.3px}
+.section-sub{color:var(--gray);font-size:0.9rem;line-height:1.8;max-width:500px;margin-bottom:64px;font-weight:300}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--cream2)}
+.service-card{background:var(--white);padding:44px 36px;transition:all 0.35s;cursor:default;position:relative;overflow:hidden}
+.service-card::after{content:'';position:absolute;left:0;bottom:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform 0.35s}
+.service-card:hover::after{transform:scaleX(1)}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.1);z-index:1}
+.service-icon{width:52px;height:52px;border:1.5px solid rgba(184,146,74,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:28px;font-size:1.4rem;transition:all 0.35s}
+.service-card:hover .service-icon{background:var(--gold);border-color:var(--gold)}
+.service-card h3{font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:12px;letter-spacing:-0.2px}
+.service-card p{font-size:0.82rem;color:var(--gray);line-height:1.75;margin-bottom:20px;font-weight:300}
+.service-list{list-style:none}
+.service-list li{font-size:0.78rem;color:var(--gray);padding:6px 0;border-bottom:1px solid rgba(0,0,0,0.05);display:flex;align-items:center;gap:8px}
+.service-list li::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.why{padding:120px 5vw;background:var(--ink);position:relative;overflow:hidden}
+.why::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border:1px solid rgba(184,146,74,0.06);border-radius:50%}
+.why::after{content:'';position:absolute;bottom:-200px;left:-100px;width:400px;height:400px;border:1px solid rgba(184,146,74,0.04);border-radius:50%}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;position:relative;z-index:2}
+.why-left .section-label::before{background:var(--gold)}
+.why-left .section-title{color:var(--white)}
+.why-left .section-sub{color:rgba(255,255,255,0.4)}
+.why-features{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.05);margin-top:0}
+.why-feat{background:var(--ink2);padding:28px 24px;transition:background 0.3s}
+.why-feat:hover{background:#22222a}
+.why-feat-icon{font-size:1.6rem;margin-bottom:14px}
+.why-feat h4{font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:8px}
+.why-feat p{font-size:0.78rem;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300}
+.why-visual{position:relative}
+.why-card{background:var(--ink2);border:1px solid rgba(184,146,74,0.1);padding:40px;position:relative}
+.why-card-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:700;color:rgba(184,146,74,0.08);position:absolute;top:-20px;right:20px;line-height:1}
+.why-card h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--white);margin-bottom:8px;font-weight:600}
+.why-card p{font-size:0.85rem;color:rgba(255,255,255,0.4);line-height:1.8;font-weight:300}
+.why-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.why-tag{font-size:0.72rem;color:var(--gold2);border:1px solid rgba(184,146,74,0.2);padding:5px 14px;letter-spacing:0.5px}
+.process{padding:120px 5vw;background:var(--light)}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:64px;position:relative}
+.process-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.process-step{text-align:center;padding:0 16px;position:relative}
+.step-circle{width:56px;height:56px;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);background:var(--light);position:relative;z-index:1;transition:all 0.3s}
+.process-step:hover .step-circle{background:var(--gold);color:var(--ink)}
+.process-step h4{font-size:0.85rem;font-weight:600;color:var(--ink);margin-bottom:8px}
+.process-step p{font-size:0.78rem;color:var(--gray);line-height:1.6;font-weight:300}
+/* PORTFOLIO */
+.portfolio{padding:120px 5vw;background:var(--cream)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--cream2);margin-top:64px}
+.portfolio-item{background:var(--ink2);aspect-ratio:4/3;position:relative;overflow:hidden;cursor:pointer}
+.portfolio-item:first-child{grid-column:span 2;aspect-ratio:unset;min-height:420px}
+.portfolio-item:hover .portfolio-bg-img{transform:scale(1.05)}
+.portfolio-bg-img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  position:absolute;inset:0;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  filter:brightness(0.92) saturate(1.1);
+}
+.portfolio-item:hover .portfolio-bg-img{transform:scale(1.08);filter:brightness(0.85) saturate(1.15);}
+.portfolio-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,12,14,0.85) 0%,rgba(12,12,14,0.2) 60%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px;opacity:0;transition:opacity 0.35s}
+.portfolio-item:hover .portfolio-overlay{opacity:1}
+.portfolio-overlay h4{font-size:1rem;color:white;font-weight:600;margin-bottom:6px}
+.portfolio-overlay p{font-size:0.78rem;color:rgba(255,255,255,0.5);font-weight:300}
+.portfolio-tag{position:absolute;top:20px;left:20px;background:var(--gold);color:var(--ink);font-size:0.68rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:5px 12px}
+/* LIGHTBOX */
+#lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.94);z-index:9999;flex-direction:column;align-items:center;justify-content:center}
+.lb-close{position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:2.2rem;cursor:pointer;z-index:10001;opacity:0.7;transition:opacity 0.2s}
+.lb-close:hover{opacity:1}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(184,146,74,0.15);border:1px solid rgba(184,146,74,0.25);color:#d4a85a;font-size:2rem;cursor:pointer;padding:10px 18px;z-index:10001;transition:all 0.2s}
+.lb-prev{left:20px}.lb-next{right:20px}
+.lb-prev:hover,.lb-next:hover{background:rgba(184,146,74,0.3)}
+#lb-img{max-width:90vw;max-height:82vh;object-fit:contain;border:1px solid rgba(184,146,74,0.15);box-shadow:0 20px 60px rgba(0,0,0,0.6);transition:opacity 0.3s;}
+#lb-counter{color:rgba(255,255,255,0.35);font-size:0.75rem;margin-top:14px;letter-spacing:2px}
+/* CTA */
+.cta{padding:120px 5vw;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,146,74,0.05) 0%,transparent 70%)}
+.cta-inner{text-align:center;max-width:680px;position:relative;z-index:2}
+.cta-inner .section-label{justify-content:center}
+.cta-inner .section-label::before{display:none}
+.cta-inner .section-title{color:var(--white);margin-bottom:20px}
+.cta-inner p{color:rgba(255,255,255,0.4);font-size:0.95rem;line-height:1.8;margin-bottom:44px;font-weight:300}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+/* CONTACT */
+.contact{padding:120px 5vw;background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;margin-top:64px}
+.contact-info{display:flex;flex-direction:column;gap:28px}
+.contact-item-label{font-size:0.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.contact-item a,.contact-item p{font-size:0.9rem;color:var(--ink);text-decoration:none;line-height:1.6}
+.contact-item a:hover{color:var(--gold)}
+.contact-form{background:var(--white);padding:48px;border:1px solid rgba(0,0,0,0.06)}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--ink);margin-bottom:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:0.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:8px}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--cream);border:1px solid rgba(0,0,0,0.08);padding:13px 16px;font-size:0.88rem;font-family:'DM Sans',sans-serif;color:var(--ink);transition:border-color 0.2s;outline:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold)}
+.form-group textarea{height:120px;resize:vertical}
+.form-submit{width:100%;background:var(--ink);color:var(--cream);padding:16px;font-size:0.85rem;font-weight:600;letter-spacing:1px;border:none;cursor:pointer;transition:all 0.25s;font-family:'DM Sans',sans-serif;text-transform:uppercase}
+.form-submit:hover{background:var(--gold);color:var(--ink)}
+.form-success{display:none;padding:12px;background:rgba(184,146,74,0.1);color:var(--gold);font-size:0.85rem;margin-top:12px;text-align:center}
+footer{background:#080810;padding:60px 5vw 32px}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand p{font-size:0.82rem;color:rgba(255,255,255,0.3);line-height:1.8;margin-top:14px;font-weight:300;max-width:260px}
+footer h4{font-size:0.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+footer ul{list-style:none}
+footer ul li{margin-bottom:10px}
+footer ul li a{font-size:0.82rem;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s}
+footer ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.2)}
+.wa{position:fixed;bottom:28px;right:28px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:all 0.25s;text-decoration:none}
+.wa:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,0.45)}
+.wa svg{width:26px;height:26px;fill:white}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:var(--cream);padding:100px 5vw 40px;flex-direction:column;gap:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--ink);text-decoration:none;font-weight:600;transition:color 0.2s}
+.mobile-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--ink);opacity:0.5;transition:opacity 0.2s}
+.mobile-close:hover{opacity:1}
+.mobile-phone{font-family:'DM Sans',sans-serif!important;font-size:1rem!important;color:var(--gold)!important;border-top:1px solid rgba(0,0,0,0.08);padding-top:24px;margin-top:8px}
+.mobile-menu a:hover{color:var(--gold)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s,transform 0.7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+.reveal-delay-4{transition-delay:0.4s}
+.title-white{color:var(--white)!important}
+.subtitle-white{color:rgba(255,255,255,0.4)!important}
+
+
+
+/* ===== МОБИЛЬНАЯ ОПТИМИЗАЦИЯ ===== */
+
+/* Планшет */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr; min-height:auto; padding:120px 5vw 80px}
+  .hero-right{display:none}
+  .why-grid{grid-template-columns:1fr;gap:60px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:1fr 1fr;gap:40px}
+  .process-steps::before{display:none}
+  .portfolio-grid{grid-template-columns:1fr 1fr}
+  .portfolio-item:first-child{grid-column:span 2}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+
+/* Телефон */
+@media(max-width:768px){
+  /* NAV */
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+  nav{padding:0 20px}
+
+  /* HERO */
+  .hero{padding:100px 20px 60px; min-height:auto}
+  .hero-badge{font-size:0.65rem}
+  .hero h1{font-size:clamp(2rem, 9vw, 3.2rem); line-height:1.15}
+  .hero>div>p{font-size:0.95rem}
+  .hero-btns{flex-direction:column; gap:12px}
+  .btn-primary,.btn-secondary{text-align:center;justify-content:center; width:100%; padding:14px 20px}
+  .hero-stats{gap:20px; flex-wrap:wrap}
+  .stat-n{font-size:2rem}
+
+  /* SECTIONS */
+  section{padding:60px 20px}
+  .section-title{font-size:clamp(1.8rem,7vw,2.6rem)}
+
+  /* SERVICES */
+  .services-grid{grid-template-columns:1fr; gap:16px}
+  .service-card{padding:28px 24px}
+
+  /* WHY */
+  .why-grid{grid-template-columns:1fr; gap:40px}
+  .why-left{padding:60px 20px 0}
+  .why-features{grid-template-columns:1fr; gap:20px}
+  .why-card{padding:28px 24px; margin:0 20px}
+  .why-card-num{font-size:4rem}
+
+  /* PROCESS */
+  .process{padding:60px 20px}
+  .process-steps{grid-template-columns:1fr; gap:32px}
+  .step-circle{width:52px;height:52px;font-size:1rem}
+
+  /* PORTFOLIO */
+  .portfolio-grid{grid-template-columns:1fr; gap:12px}
+  .portfolio-item:first-child{grid-column:span 1; min-height:260px}
+  .portfolio-item{min-height:240px; border-radius:8px}
+  .portfolio-overlay{opacity:1}
+  .portfolio-overlay h4{font-size:0.95rem}
+  .portfolio-overlay p{font-size:0.75rem}
+
+  /* LIGHTBOX mobile */
+  #lb-img{max-width:95vw; max-height:70vh}
+  .lb-prev{left:8px; font-size:2rem}
+  .lb-next{right:8px; font-size:2rem}
+  .lb-close{top:12px; right:12px}
+  #lb-counter{font-size:0.8rem}
+
+  /* CONTACT */
+  .contact{padding:60px 20px}
+  .contact-form{padding:28px 20px}
+  .form-row{grid-template-columns:1fr; gap:16px}
+  .contact-info{gap:24px}
+
+  /* CTA */
+  .cta-inner{padding:60px 20px}
+  .cta-inner h2{font-size:clamp(1.8rem,7vw,2.4rem)}
+  .cta-buttons{flex-direction:column; gap:12px; align-items:stretch}
+  .cta-buttons a{text-align:center; justify-content:center}
+
+  /* FOOTER */
+  .footer-top{grid-template-columns:1fr; gap:32px; padding:48px 20px 32px}
+  .footer-bottom{padding:20px; flex-direction:column; gap:8px; text-align:center; font-size:0.8rem}
+
+  /* WHATSAPP BTN */
+  .wa{width:52px;height:52px;bottom:20px;right:20px}
+  .wa svg{width:26px;height:26px}
+
+  /* CURSOR — скрыть на мобиле */
+  .cursor,.cursor-ring{display:none}
+}
+
+/* Маленькие телефоны */
+@media(max-width:480px){
+  .hero h1{font-size:clamp(1.7rem,8vw,2.4rem)}
+  .hero-stats{justify-content:space-between; width:100%}
+  .stat{flex:1; text-align:center}
+  .section-title{font-size:clamp(1.6rem,7vw,2rem)}
+  .why-left{padding:40px 20px 0}
+  .why-card{margin:0 0}
+  .portfolio-item{min-height:200px}
+  .service-card{padding:22px 18px}
+  .why-feat{padding:18px}
+  .contact-form{padding:24px 16px}
+  .form-submit{font-size:0.85rem; padding:14px}
+  .footer-top{padding:36px 16px 24px}
+  .ticker-inner span{font-size:0.68rem; padding:0 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo">
+    <div class="logo-box">BEG</div>
+    <div class="logo-text">
+      <strong>Building Engineering</strong>
+      <span>Gloubal · Алматы</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#why">О нас</a></li>
+    <li><a href="#portfolio">Проекты</a></li>
+    <li><a href="#process">Как работаем</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Оставить заявку</a>
+  <div class="burger" id="burger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">✕</button>
+  <a href="#services" onclick="closeMenu()">Услуги</a>
+  <a href="#why" onclick="closeMenu()">О нас</a>
+  <a href="#portfolio" onclick="closeMenu()">Проекты</a>
+  <a href="#process" onclick="closeMenu()">Процесс</a>
+  <a href="#contact" onclick="closeMenu()">Контакты</a>
+  <a href="tel:+77785370394" onclick="closeMenu()" class="mobile-phone">+7 (778) 537-03-94</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Алматы · Под ключ</div>
+    <h1>Ремонт и строительство,<br/>которому <em>доверяют</em></h1>
+    <p>Офисы, квартиры, дома, магазины — делаем качественно, в срок, без лишних хлопот. Доверьте компании Building Engineering Group с 15-летним опытом.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">
+        Обсудить проект
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:+77785370394" class="btn-secondary">+7 (778) 537-03-94</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-n">15+</div>
+        <div class="stat-l">Лет опыта</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">200+</div>
+        <div class="stat-l">Объектов</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">100%</div>
+        <div class="stat-l">Гарантия</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <div class="hero-visual">
+        <div class="hero-visual-tag">
+          <p>Текущий проект</p>
+          <strong>Офисный ремонт · 340 м²</strong>
+        </div>
+      </div>
+    </div>
+    <div class="hero-number">BEG</div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Офисы</span><span>Квартиры</span><span>Дома</span><span>Магазины</span>
+    <span>Рестораны</span><span>Склады</span><span>Коттеджи</span><span>Студии</span>
+    <span>Офисы</span><span>Квартиры</span><span>Дома</span><span>Магазины</span>
+    <span>Рестораны</span><span>Склады</span><span>Коттеджи</span><span>Студии</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-label reveal"><span>Направления</span></div>
+  <h2 class="section-title reveal">Что мы строим<br/>и ремонтируем</h2>
+  <p class="section-sub reveal">Беремся за проекты любой сложности — от косметического ремонта до строительства под ключ.</p>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🏢</div>
+      <h3>Офисы</h3>
+      <p>Создаём рабочее пространство, где приятно работать и встречать клиентов.</p>
+      <ul class="service-list">
+        <li>Планировка и зонирование</li>
+        <li>Отделка и меблировка</li>
+        <li>Инженерные системы</li>
+        <li>Ремонт любой сложности</li>
+      </ul>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">🏠</div>
+      <h3>Дома и квартиры</h3>
+      <p>Превращаем жильё в место мечты, где хочется возвращаться каждый день.</p>
+      <ul class="service-list">
+        <li>Дизайн интерьера</li>
+        <li>Евроремонт и капремонт</li>
+        <li>Строительство домов</li>
+        <li>Коттеджи под ключ</li>
+      </ul>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">🏪</div>
+      <h3>Магазины</h3>
+      <p>Торговые пространства, которые работают на ваш бизнес и привлекают покупателей.</p>
+      <ul class="service-list">
+        <li>Торговые залы</li>
+        <li>Витрины и фасады</li>
+        <li>Рестораны и кафе</li>
+        <li>Салоны красоты</li>
+      </ul>
+    </div>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-icon">🏗️</div>
+      <h3>Другие объекты</h3>
+      <p>Склады, производства, медицинские центры, образовательные учреждения.</p>
+      <ul class="service-list">
+        <li>Склады и производства</li>
+        <li>Медицинские объекты</li>
+        <li>Образовательные центры</li>
+        <li>Любые коммерческие объекты</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div class="why-left">
+      <div class="section-label reveal"><span>Почему мы</span></div>
+      <h2 class="section-title title-white reveal">Опытная крупная<br/>компания — цена<br/>для малых проектов</h2>
+      <p class="section-sub subtitle-white reveal">Building Engineering Gloubal создана специально для небольших и средних проектов. Вы получаете качество строительной компании с 15-летним опытом, но без переплат.</p>
+      <div class="why-features reveal">
+        <div class="why-feat">
+          <div class="why-feat-icon">★</div>
+          <h4>Быстрые сроки</h4>
+          <p>Чёткий план работ и соблюдение дедлайнов — без переносов и оправданий</p>
+        </div>
+        <div class="why-feat">
+          <div class="why-feat-icon">🛡️</div>
+          <h4>Гарантия качества</h4>
+          <p>Гарантия на выполненные работы. Устраняем недочёты бесплатно</p>
+        </div>
+        <div class="why-feat">
+          <div class="why-feat-icon">💰</div>
+          <h4>Фиксированная цена</h4>
+          <p>Смета утверждается заранее. Никаких неожиданных доплат в процессе</p>
+        </div>
+        <div class="why-feat">
+          <div class="why-feat-icon">🤝</div>
+          <h4>Один контакт</h4>
+          <p>Персональный менеджер ведёт ваш проект от начала до сдачи</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual reveal">
+      <div class="why-card">
+        <div class="why-card-num">15</div>
+        <h3>Лет в строительстве Казахстана</h3>
+        <p>Наша материнская компания Building Engineering Group работает с 2009 года. За это время мы построили спортивные комплексы, ТРЦ, медицинские центры и жилые дома по всему Казахстану.</p>
+        <div class="why-tags">
+          <span class="why-tag">FIFA-стандарт</span>
+          <span class="why-tag">Лицензия РК</span>
+          <span class="why-tag">200+ объектов</span>
+          <span class="why-tag">Алматы</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-label reveal"><span>Как работаем</span></div>
+  <h2 class="section-title reveal">От звонка до<br/>готового объекта</h2>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-circle">01</div>
+      <h4>Заявка</h4>
+      <p>Оставляете заявку или звоните. Связываемся в течение часа</p>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-circle">02</div>
+      <h4>Замер и смета</h4>
+      <p>Выезжаем на объект, делаем замеры и готовим смету бесплатно</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-circle">03</div>
+      <h4>Договор</h4>
+      <p>Фиксируем сроки, объём работ и стоимость. Никаких сюрпризов</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-circle">04</div>
+      <h4>Работы</h4>
+      <p>Выполняем все работы в срок. Вы наблюдаете за прогрессом</p>
+    </div>
+    <div class="process-step reveal reveal-delay-4">
+      <div class="step-circle">05</div>
+      <h4>Сдача</h4>
+      <p>Принимаете готовый объект и подписываете акт выполненных работ</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="section-label reveal"><span>Наши работы</span></div>
+  <h2 class="section-title reveal">Реализованные<br/>проекты</h2>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-prev" onclick="prevImg()">‹</button>
+    <img id="lb-img" src="" alt=""/>
+    <div id="lb-counter"></div>
+    <button class="lb-next" onclick="nextImg()">›</button>
+  </div>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-item reveal" onclick="openLightbox('office',0)">
+      <img loading="lazy" class="portfolio-bg-img" src="https://drive.google.com/thumbnail?id=1WcIUCygwCl1YHfsRf7FOYIFz-C3HXdbt&sz=w1600" alt="Офис"/>
+      <span class="portfolio-tag">Офис</span>
+      <div class="portfolio-overlay">
+        <h4>Офисный ремонт · Алматы</h4>
+        <p>5 фото — нажмите для просмотра</p>
+      </div>
+    </div>
+    <div class="portfolio-item reveal reveal-delay-1" onclick="openLightbox('apartment',0)">
+      <img loading="lazy" class="portfolio-bg-img" src="https://drive.google.com/thumbnail?id=1RGs5Ca5tRFgiW3wlmnsXh8AEy5HkuVgc&sz=w1600" alt="Квартира"/>
+      <span class="portfolio-tag">Квартира</span>
+      <div class="portfolio-overlay">
+        <h4>Евроремонт квартир</h4>
+        <p>8 фото — нажмите для просмотра</p>
+      </div>
+    </div>
+    <div class="portfolio-item reveal reveal-delay-1" onclick="openLightbox('shop',0)">
+      <img loading="lazy" class="portfolio-bg-img" src="https://drive.google.com/thumbnail?id=1A7F6bJFHYUGY0tg13Zd5On1eWuQNAW4R&sz=w1600" alt="Магазин"/>
+      <span class="portfolio-tag">Магазин</span>
+      <div class="portfolio-overlay">
+        <h4>Торговые залы · Алматы</h4>
+        <p>6 фото — нажмите для просмотра</p>
+      </div>
+    </div>
+    <div class="portfolio-item reveal reveal-delay-2" onclick="openLightbox('house',0)">
+      <img loading="lazy" class="portfolio-bg-img" src="https://drive.google.com/thumbnail?id=1rY1UdbLnDqHQSaFgorsydRYlaN8KFXXP&sz=w1600" alt="Дом"/>
+      <span class="portfolio-tag">Дом</span>
+      <div class="portfolio-overlay">
+        <h4>Коттедж под ключ</h4>
+        <p>10 фото — нажмите для просмотра</p>
+      </div>
+    </div>
+    <div class="portfolio-item reveal reveal-delay-2" onclick="openLightbox('medcenter',0)">
+      <img loading="lazy" class="portfolio-bg-img" src="https://drive.google.com/thumbnail?id=1k80R51Ozzx0gutCa-WkfZWC1lYtLgEVu&sz=w1600" alt="Медцентр"/>
+      <span class="portfolio-tag">Медцентр</span>
+      <div class="portfolio-overlay">
+        <h4>Медицинский центр · Алматы</h4>
+        <p>10 фото — нажмите для просмотра</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="section-label"><span>Начнём?</span></div>
+    <h2 class="section-title title-white reveal">Готовы обсудить<br/>ваш проект?</h2>
+    <p class="reveal" style="color:rgba(255,255,255,0.45);font-size:0.95rem;line-height:1.8;margin-bottom:44px;font-weight:300">Оставьте заявку — свяжемся в течение часа, выедем на замер бесплатно.</p>
+    <div class="cta-buttons reveal">
+      <a href="#contact" class="btn-primary">Оставить заявку</a>
+      <a href="tel:+77273132761" class="btn-secondary">+7 (727) 313-27-61</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label reveal"><span>Контакты</span></div>
+  <h2 class="section-title reveal">Свяжитесь с нами</h2>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="contact-item">
+        <div class="contact-item-label">Телефон</div>
+        <a href="tel:+77785370394">+7 (778) 537-03-94</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">WhatsApp</div>
+        <a href="https://wa.me/77785370394">+7 (778) 537-03-94</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Email</div>
+        <a href="mailto:toobeg@yandex.ru">toobeg@yandex.ru</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Адрес</div>
+        <p>г. Алматы,<br/>ул. Байтурсынова 22</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Режим работы</div>
+        <p>Понедельник — Пятница<br/>08:00 — 17:00</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Реквизиты</div>
+        <p>ТОО "Building Engineering Gloubal"<br/>БИН: 011040006934</p>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-title">Обсудим ваш объект</div>
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="997f99c8-e1e2-4354-9c06-1f26a3ad0d23"/>
+        <input type="hidden" name="subject" value="Новая заявка — BEG Gloubal"/>
+        <input type="hidden" name="from_name" value="BEG Gloubal Сайт"/>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Имя</label>
+            <input type="text" name="name" placeholder="Алибек" required autocomplete="name"/>
+          </div>
+          <div class="form-group">
+            <label>Телефон</label>
+            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Тип объекта</label>
+          <select name="object_type">
+            <option value="">Выберите...</option>
+            <option>Офис</option>
+            <option>Квартира</option>
+            <option>Дом / Коттедж</option>
+            <option>Магазин / Ресторан</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Описание</label>
+          <textarea name="message" placeholder="Кратко опишите что нужно сделать..."></textarea>
+        </div>
+        
+        <button type="submit" class="form-submit">Отправить заявку →</button>
+        <p class="form-success" id="formSuccess">✓ Заявка отправлена! Свяжемся в течение часа.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <div class="logo-box">BEG</div>
+        <div class="logo-text">
+          <strong>Building Engineering</strong>
+          <span>Gloubal · Алматы</span>
+        </div>
+      </a>
+      <p>Ремонт и строительство офисов, квартир, домов и магазинов в Алматы. Быстро, качественно, под ключ.</p>
+    </div>
+    <div>
+      <h4>Услуги</h4>
+      <ul>
+        <li><a href="#services">Офисы</a></li>
+        <li><a href="#services">Квартиры и дома</a></li>
+        <li><a href="#services">Магазины</a></li>
+        <li><a href="#services">Другие объекты</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Компания</h4>
+      <ul>
+        <li><a href="#why">О нас</a></li>
+        <li><a href="#portfolio">Проекты</a></li>
+        <li><a href="#process">Как работаем</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <ul>
+        <li><a href="tel:+77785370394">+7 (778) 537-03-94</a></li>
+        <li><a href="https://wa.me/77785370394">WhatsApp</a></li>
+        <li><a href="mailto:toobeg@yandex.ru">toobeg@yandex.ru</a></li>
+        <li><a href="https://maps.google.com/?q=Алматы,+Байтурсынова+22" target="_blank">Алматы, ул. Байтурсынова 22</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ТОО Building Engineering Gloubal. Все права защищены.</p>
+    <p>Алматы, Казахстан</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/77785370394" class="wa" target="_blank" rel="noopener noreferrer">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.555 4.122 1.526 5.854L.057 23.804a.5.5 0 00.61.61l6.054-1.534A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 01-5.031-1.373l-.36-.214-3.733.946.995-3.645-.233-.374A9.9 9.9 0 012.1 12C2.1 6.532 6.532 2.1 12 2.1S21.9 6.532 21.9 12 17.468 21.9 12 21.9z"/></svg>
+</a>
+
+<script>
+// CURSOR
+const cursor=document.getElementById('cursor');
+const ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx-4+'px';cursor.style.top=my-4+'px'});
+function animRing(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx-18+'px';ring.style.top=ry-18+'px';requestAnimationFrame(animRing)}
+animRing();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2)';ring.style.transform='scale(1.5)'});
+  el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.transform='scale(1)'});
+});
+// NAV
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
+// BURGER
+const burger=document.getElementById('burger');
+const menu=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>menu.classList.toggle('open'));
+function closeMenu(){menu.classList.remove('open')}
+// REVEAL
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// FORM
+const form=document.getElementById('contactForm');
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=form.querySelector('.form-submit');
+  btn.disabled=true;btn.textContent='Отправка...';
+  try{
+    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    const data=await res.json();
+    if(data.success){form.reset();document.getElementById('formSuccess').style.display='block';btn.textContent='Отправлено ✓'}
+    else throw new Error();
+  }catch{btn.disabled=false;btn.textContent='Отправить заявку →'}
+});
+// LIGHTBOX
+const gallery={
+  office:['1WcIUCygwCl1YHfsRf7FOYIFz-C3HXdbt','19RPe1PzSqmPzP-uDRq3Hra06_fC5ckfJ','1e4ZxmkVtGxBNnHKamwNu_WgiLhmSKZX7','1UhpXTtQ2o_u1Z-qzLQDNKhXPj9lzztXy','1ocaSFGQ6YlI7KByow9WzcSRehtMV7BqD'],
+  apartment:['1RGs5Ca5tRFgiW3wlmnsXh8AEy5HkuVgc','11U9LBeXlw-kShG6PDHBSEDQR334z8zkN','1ga7pmbM6RRT7grUjfOKprJhje6Jnh3uQ','18bP76x-Y638EdmRYvz9FCNKCOFo4vCp9','1E0MhLMxqxfXhK-s7XLtx1wkPIKjgiHQX','1Wh3Q9VlST5ww4Oi1GraMZlHk3WXFt_am','1JV285k0oboaO0iXGkXf8WGxDoQYUxpEV','1cXoAQX_R2icaAKCNEHzNovVuyyRvWaxH'],
+  shop:['1A7F6bJFHYUGY0tg13Zd5On1eWuQNAW4R','1VRXwMk0mRvZeLucwFjk34b5qowu6CQ_g','1LltFgiZvyBpb-r-4_A_h3m_Z7v64GvlA','1PPdSJjDX-0e6uXy8tJwwzVY4MGQe0YXg','1RbGjQSGjG6QqJK9uBDu7cfhxTfvWZowP','18qmz9TYWJsMkaTVjQJfCMSDKz3f_4yV8'],
+  house:['1rY1UdbLnDqHQSaFgorsydRYlaN8KFXXP','1w8EQGqNiZccQ1RQdI2YNfVeyiku_Y3mD','1WzitPMoRtZz6ZpoIZqHj0XcQz8U39hjq','10PWXq6pGdnAZdBOCNkW-lAyFAVaIzxa3','19vARgVdMBz-uFYUPXxa9RSlL_Q7zpiPn','16i9NqU6AV_4mynAObYFGyte9POS9fHrY','1q-GXwgMdPYDbT4dQRwvAifpWyN1BC_SY','1pLFBgw1jEgRKR1wLoMdlJIAe85rPNn4Y','10dmvijAJau8Ju4ILuXXaYP0JYJLmmM5j','1Y_Z78-7Bs5vNY8g4mz9jDE1jrnrIdVhr'],
+  medcenter:['1k80R51Ozzx0gutCa-WkfZWC1lYtLgEVu','1RtUYw6tCK_HzTezUMj0v5M5zfn8o4JUs','1Wi2Ds8qeB7LIKKzG9WM5KXSV7EoJ23st','19WUieVOPVeCASSPzDnmpIOsVDnIySmUU','1XLc5wE1bxCj6DesRuEba0C3YSskfetDG','1g179xarOeLEHMF8cIuZm3x4mxX8LChWB','1wz6_sTGMy9wZmtyqvJjwXB7io4H3bZLG','16LilPAYUsd5aTIuIewc-HIIwM1FxSh2m','1dAdH93Fu_wYbqXtVmIUIb7O-7OdgS86-','1ItMLCswzW9gc5TeGHJE0dXUadEULdjXD']
+};
+let curCat='',curIdx=0;
+function openLightbox(cat,idx){
+  curCat=cat;curIdx=idx;
+  const lb=document.getElementById('lightbox');
+  lb.style.display='flex';
+  document.body.style.overflow='hidden';
+  showImg();
+}
+function closeLightbox(){
+  document.getElementById('lightbox').style.display='none';
+  document.body.style.overflow='';
+}
+function showImg(){
+  const ids=gallery[curCat];
+  const img=document.getElementById('lb-img');
+  img.style.opacity='0.3';
+  img.src='https://drive.google.com/thumbnail?id='+ids[curIdx]+'&sz=w1600';
+  img.onload=()=>{img.style.transition='opacity 0.3s';img.style.opacity='1';};
+  document.getElementById('lb-counter').textContent=(curIdx+1)+' / '+ids.length;
+}
+function nextImg(){curIdx=(curIdx+1)%gallery[curCat].length;showImg();}
+function prevImg(){curIdx=(curIdx-1+gallery[curCat].length)%gallery[curCat].length;showImg();}
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('lightbox').style.display!=='none'){
+    if(e.key==='ArrowRight')nextImg();
+    else if(e.key==='ArrowLeft')prevImg();
+    else if(e.key==='Escape')closeLightbox();
+  }
+});
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox();});
+
+// TOUCH SWIPE for lightbox
+let touchStartX=0, touchEndX=0;
+document.getElementById('lightbox').addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX;},{passive:true});
+document.getElementById('lightbox').addEventListener('touchend',e=>{
+  touchEndX=e.changedTouches[0].screenX;
+  const diff=touchStartX-touchEndX;
+  if(Math.abs(diff)>50){
+    if(diff>0)nextImg();
+    else prevImg();
+  }
+});
+</script>
+</body>
+</html>
