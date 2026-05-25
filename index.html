@@ -44,11 +44,23 @@ nav.scrolled{background:rgba(245,242,236,0.98);box-shadow:0 2px 40px rgba(0,0,0,
 .nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .burger span{display:block;width:24px;height:1.5px;background:var(--ink);transition:all 0.3s}
-.hero{min-height:100vh;background:var(--ink);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;padding-top:68px}
-.hero-left{padding:80px 5vw 80px 5vw;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero{min-height:100vh;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:68px}
+.hero::before{content:'BEG';font-family:'Cormorant Garamond',serif;font-size:28rem;font-weight:700;color:rgba(184,146,74,0.04);position:absolute;bottom:-60px;right:5vw;line-height:1;user-select:none;pointer-events:none}
+.hero-left{padding:120px 5vw 100px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;max-width:900px;width:100%}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5rem);font-weight:600;color:var(--white);line-height:1.05;margin-bottom:28px;letter-spacing:-0.5px}
 .hero-right{position:relative;overflow:hidden;background:linear-gradient(135deg,#1a1a1f 0%,#0c0c0e 100%)}
 .hero-right::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(184,146,74,0.04) 0,rgba(184,146,74,0.04) 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,rgba(184,146,74,0.04) 0,rgba(184,146,74,0.04) 1px,transparent 1px,transparent 60px)}
 .hero-number{position:absolute;bottom:60px;right:5vw;font-family:'Cormorant Garamond',serif;font-size:18rem;font-weight:700;color:rgba(184,146,74,0.06);line-height:1;user-select:none}
+.hero-visual{width:75%;max-width:420px;aspect-ratio:3/4;border:1px solid rgba(184,146,74,0.15);position:relative;display:flex;align-items:center;justify-content:center}
+.hero-visual::before{content:'BEG';font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:700;color:rgba(184,146,74,0.07);position:absolute}
+.hero-visual-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;gap:16px}
+.hv-line{position:absolute;background:rgba(184,146,74,0.15)}
+.hv-line-1{top:0;left:0;width:1px;height:40%}
+.hv-line-2{top:0;left:0;width:40%;height:1px}
+.hv-stat{display:flex;flex-direction:column;gap:4px}
+.hv-stat-2{border-top:1px solid rgba(184,146,74,0.12);padding-top:16px}
+.hv-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--gold2);line-height:1}
+.hv-label{font-size:0.7rem;color:rgba(255,255,255,0.35);letter-spacing:1.5px;text-transform:uppercase}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(184,146,74,0.1);border:1px solid rgba(184,146,74,0.2);padding:7px 16px;margin-bottom:36px;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);font-weight:500}
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
@@ -65,6 +77,11 @@ nav.scrolled{background:rgba(245,242,236,0.98);box-shadow:0 2px 40px rgba(0,0,0,
 .stat-n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--gold2);line-height:1}
 .stat-l{font-size:0.72rem;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase;margin-top:5px}
 .hero-img-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.hero-right:hover .hero-visual img{filter:brightness(0.75) saturate(1.1)!important;}
+.hero-right::after{content:'▶ Смотреть фото';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+background:rgba(184,146,74,0.9);color:#0c0c0e;padding:10px 22px;font-size:0.78rem;font-weight:600;
+letter-spacing:1px;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:10;white-space:nowrap}
+.hero-right:hover::after{opacity:1}
 .hero-visual{width:75%;max-width:420px;aspect-ratio:3/4;background:linear-gradient(160deg,rgba(184,146,74,0.08) 0%,rgba(184,146,74,0.02) 100%);border:1px solid rgba(184,146,74,0.12);position:relative;display:flex;align-items:center;justify-content:center}
 .hero-visual::before{content:'BEG';font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:700;color:rgba(184,146,74,0.08);position:absolute}
 .hero-visual-tag{position:absolute;bottom:-1px;left:-1px;right:-1px;background:rgba(184,146,74,0.08);border-top:1px solid rgba(184,146,74,0.15);padding:16px 20px}
@@ -381,17 +398,7 @@ footer ul li a:hover{color:var(--gold)}
       </div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-img-wrap">
-      <div class="hero-visual">
-        <div class="hero-visual-tag">
-          <p>Текущий проект</p>
-          <strong> Офисный ремонт · 340 м²</strong>
-        </div>
-      </div>
-    </div>
-    <div class="hero-number">BEG</div>
-  </div>
+
 </section>
 
 <!-- TICKER -->
